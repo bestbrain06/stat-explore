@@ -1,37 +1,51 @@
-/* ==========================================
-   HERO SECTION
-========================================== */
+/* =====================================================
+   PREMIUM HERO SECTION
+===================================================== */
 
 .hero {
-  padding: 7rem 0 6rem;
+  position: relative;
 
   overflow: hidden;
+
+  padding: 8rem 0 7rem;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.15),
+      transparent 35%
+    ),
+    linear-gradient(135deg, var(--background-color), var(--surface-color));
 }
 
 .hero-wrapper {
   display: grid;
 
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1.1fr 0.9fr;
 
   align-items: center;
 
-  gap: 4rem;
+  gap: 5rem;
 }
 
-/* ==========================================
+/* =====================================================
    HERO CONTENT
-========================================== */
+===================================================== */
+
+.hero-content {
+  max-width: 680px;
+}
 
 .course-name {
   display: inline-block;
 
-  padding: 0.7rem 1.5rem;
+  padding: 0.6rem 1.2rem;
+
+  border-radius: 50px;
 
   background: rgba(99, 102, 241, 0.12);
 
   color: var(--primary-color);
-
-  border-radius: 50px;
 
   font-weight: 700;
 
@@ -39,41 +53,493 @@
 }
 
 .hero-label {
-  font-size: 1rem;
+  font-weight: 700;
 
-  font-weight: 600;
-
-  color: var(--muted-text-color);
-
-  margin-bottom: 1rem;
-}
-
-.course-purpose {
-  color: var(--muted-text-color);
-
-  font-style: italic;
+  color: var(--secondary-color);
 
   margin-bottom: 1.5rem;
 }
 
 .hero-content h1 {
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: clamp(3rem, 5vw, 5rem);
 
   line-height: 1.05;
 
-  margin-bottom: 1.8rem;
+  letter-spacing: -0.04em;
 
-  letter-spacing: -1px;
+  margin-bottom: 1.8rem;
+}
+
+.course-purpose {
+  font-size: 1.35rem;
+
+  font-weight: 600;
+
+  line-height: 1.6;
+
+  max-width: 620px;
 }
 
 .hero-description {
-  max-width: 720px;
+  margin-top: 1.5rem;
 
-  font-size: 1.15rem;
-
-  line-height: 1.9;
+  max-width: 620px;
 
   color: var(--muted-text-color);
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+}
+
+.hero-buttons .btn {
+  padding: 1rem 2.2rem;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.25);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border-color);
+
+  background: white;
+}
+
+/* =====================================================
+   HERO HIGHLIGHTS
+===================================================== */
+
+.hero-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1rem;
+
+  margin-top: 3rem;
+}
+
+.hero-highlights div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.7rem;
+}
+
+.hero-highlights span {
+  width: 26px;
+
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: var(--primary-color);
+
+  font-weight: 700;
+}
+
+.hero-highlights p {
+  margin: 0;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   STATISTICS VISUAL
+===================================================== */
+
+.hero-visual {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.visual-glow {
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2), transparent 65%);
+
+  filter: blur(20px);
+}
+
+.statistics-illustration {
+  position: relative;
+
+  width: 430px;
+
+  height: 500px;
+
+  animation: floatIllustration 7s ease-in-out infinite;
+}
+
+/* =====================================================
+   CHART CARDS
+===================================================== */
+
+.chart-card {
+  position: absolute;
+
+  background: white;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 24px;
+
+  padding: 1.5rem;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card h3 {
+  font-size: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+/* HISTOGRAM */
+
+.histogram-card {
+  top: 30px;
+
+  left: 20px;
+
+  width: 220px;
+}
+
+.bars {
+  height: 130px;
+
+  display: flex;
+
+  align-items: end;
+
+  gap: 10px;
+}
+
+.bars span {
+  width: 25px;
+
+  background: linear-gradient(
+    180deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+
+  border-radius: 8px 8px 0 0;
+
+  animation: growBars 1.5s ease forwards;
+}
+
+.bars span:nth-child(1) {
+  height: 40%;
+}
+
+.bars span:nth-child(2) {
+  height: 70%;
+}
+
+.bars span:nth-child(3) {
+  height: 90%;
+}
+
+.bars span:nth-child(4) {
+  height: 60%;
+}
+
+.bars span:nth-child(5) {
+  height: 80%;
+}
+
+/* BOX PLOT */
+
+.boxplot-card {
+  right: 10px;
+
+  top: 190px;
+
+  width: 250px;
+}
+
+.boxplot {
+  position: relative;
+
+  height: 60px;
+}
+
+.boxplot .line {
+  position: absolute;
+
+  top: 30px;
+
+  width: 100%;
+
+  height: 3px;
+
+  background: var(--primary-color);
+}
+
+.box {
+  position: absolute;
+
+  left: 60px;
+
+  top: 10px;
+
+  width: 110px;
+
+  height: 40px;
+
+  border: 3px solid var(--primary-color);
+
+  border-radius: 10px;
+}
+
+.median {
+  position: absolute;
+
+  left: 115px;
+
+  top: 10px;
+
+  height: 40px;
+
+  width: 3px;
+
+  background: var(--secondary-color);
+}
+
+.quartile-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 0.85rem;
+
+  color: var(--muted-text-color);
+}
+
+/* =====================================================
+   FLOATING CONCEPT TAGS
+===================================================== */
+
+.concept-tag {
+  position: absolute;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 1rem 1.3rem;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.concept-tag strong {
+  color: var(--primary-color);
+}
+
+.concept-tag p {
+  margin: 0.3rem 0 0;
+
+  font-size: 0.85rem;
+}
+
+.tag-range {
+  left: -20px;
+
+  bottom: 100px;
+}
+
+.tag-iqr {
+  right: -20px;
+
+  bottom: 50px;
+}
+
+.tag-standard {
+  left: 40px;
+
+  bottom: -20px;
+}
+
+/* =====================================================
+   MATHEMATICAL WATERMARKS
+===================================================== */
+
+.math-symbol {
+  position: absolute;
+
+  color: var(--primary-color);
+
+  opacity: 0.06;
+
+  font-size: 4rem;
+
+  font-weight: 800;
+}
+
+.symbol-one {
+  top: 20px;
+
+  right: 40px;
+}
+
+.symbol-two {
+  bottom: 80px;
+
+  right: 100px;
+}
+
+.symbol-three {
+  top: 260px;
+
+  left: -40px;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+.hero-reveal {
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  animation: heroReveal 0.8s ease forwards;
+}
+
+.hero-reveal:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hero-reveal:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.hero-reveal:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.hero-reveal:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.hero-reveal:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes growBars {
+  from {
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes floatIllustration {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .hero-content {
+    margin: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-highlights {
+    max-width: 500px;
+
+    margin: 3rem auto 0;
+  }
+
+  .hero-visual {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .statistics-illustration {
+    transform: scale(0.75);
+
+    margin: -50px 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-highlights {
+    grid-template-columns: 1fr;
+
+    text-align: left;
+  }
 }
 
 /* ==========================================
@@ -283,58 +749,174 @@
   }
 }
 
-/* ==========================================
-   INTRODUCTION
-========================================== */
+/* =====================================================
+INTRODUCTION SECTION
+===================================================== */
 
 .introduction {
-  padding: 5rem 0;
+  padding: 7rem 0;
 }
 
-.intro-box {
-  max-width: 850px;
+.intro-wrapper {
+  display: grid;
 
-  margin: auto;
+  grid-template-columns: 1fr 1fr;
 
-  text-align: center;
+  gap: 5rem;
 
-  padding: 3rem;
-
-  border-radius: 30px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(99, 102, 241, 0.08),
-    rgba(14, 165, 233, 0.08)
-  );
+  align-items: center;
 }
 
-.intro-box h2 {
-  font-size: 2.5rem;
+.section-label {
+  display: inline-block;
+
+  padding: 0.5rem 1rem;
+
+  border-radius: 50px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: var(--primary-color);
+
+  font-weight: 700;
 
   margin-bottom: 1.5rem;
 }
 
-.intro-box p {
+.intro-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  line-height: 1.15;
+
+  margin-bottom: 1.5rem;
+}
+
+.intro-content p {
   font-size: 1.1rem;
 
-  line-height: 1.9;
+  line-height: 1.8;
+
+  color: var(--muted-text-color);
 }
 
-/* ==========================================
-   OBJECTIVES
-========================================== */
+.intro-link {
+  display: inline-block;
+
+  margin-top: 2rem;
+
+  color: var(--primary-color);
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+/* DATA COMPARISON */
+
+.dataset-comparison {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1.5rem;
+}
+
+.dataset-card {
+  background: white;
+
+  border: 1px solid var(--border-color);
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.dataset-card h3 {
+  color: var(--primary-color);
+
+  margin-bottom: 1.5rem;
+}
+
+.data-values {
+  display: flex;
+
+  gap: 0.5rem;
+
+  flex-wrap: wrap;
+}
+
+.data-values span {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(99, 102, 241, 0.1);
+
+  font-weight: 700;
+}
+
+.dataset-card p {
+  margin-top: 1.5rem;
+
+  font-weight: 700;
+
+  color: var(--secondary-color);
+}
+
+@media (max-width: 900px) {
+  .intro-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .dataset-comparison {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .dataset-comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+LEARNING OUTCOMES
+===================================================== */
 
 .objectives {
-  padding: 6rem 0;
+  padding: 7rem 0;
+
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.04), transparent);
 }
 
-.section-title {
-  text-align: center;
+.section-heading {
+  max-width: 700px;
 
-  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
 
-  margin-bottom: 3rem;
+.section-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  margin-bottom: 1rem;
+}
+
+.section-heading p {
+  color: var(--muted-text-color);
+
+  line-height: 1.8;
+
+  font-size: 1.1rem;
 }
 
 .objective-grid {
@@ -346,35 +928,71 @@
 }
 
 .objective-card {
-  padding: 2.5rem;
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 2.8rem 2.2rem;
 
   background: white;
 
+  border-radius: 28px;
+
   border: 1px solid var(--border-color);
 
-  border-radius: 25px;
-
-  transition: 0.3s ease;
+  transition: 0.4s ease;
 }
 
 .objective-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
 }
 
-.objective-card span {
-  font-size: 2.5rem;
+.objective-number {
+  position: absolute;
+
+  top: 15px;
+
+  right: 20px;
+
+  font-size: 5rem;
 
   font-weight: 800;
 
   color: var(--primary-color);
 
-  opacity: 0.4;
+  opacity: 0.08;
+}
+
+.objective-icon {
+  width: 55px;
+
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: var(--primary-color);
+
+  font-size: 1.8rem;
+
+  font-weight: 800;
+
+  margin-bottom: 2rem;
 }
 
 .objective-card h3 {
-  margin: 1rem 0;
+  font-size: 1.8rem;
+
+  margin-bottom: 1rem;
 }
 
 .objective-card p {
@@ -383,56 +1001,108 @@
   color: var(--muted-text-color);
 }
 
-/* ==========================================
-   LEARNING JOURNEY
-========================================== */
+.objective-card::after {
+  content: "";
 
-.learning-path {
-  padding: 6rem 0;
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  height: 5px;
+
+  width: 0;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  transition: 0.4s ease;
 }
 
-.journey {
-  max-width: 850px;
+.objective-card:hover::after {
+  width: 100%;
+}
 
-  margin: auto;
+@media (max-width: 900px) {
+  .objective-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+LEARNING JOURNEY
+===================================================== */
+
+.learning-path {
+  padding: 7rem 0;
+}
+
+.journey-container {
+  position: relative;
 
   display: grid;
 
-  gap: 1.5rem;
-}
-
-.journey-step {
-  display: flex;
-
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 2rem;
 
-  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.journey-container::before {
+  content: "";
+
+  position: absolute;
+
+  top: 45px;
+
+  left: 10%;
+
+  right: 10%;
+
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  z-index: -1;
+}
+
+.journey-step {
+  position: relative;
+
+  background: white;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 24px;
+
+  padding: 2.5rem 1.8rem;
 
   text-decoration: none;
 
   color: inherit;
 
-  background: var(--surface-color);
-
-  border: 1px solid var(--border-color);
-
-  border-radius: 25px;
-
-  transition: 0.3s ease;
+  transition: 0.4s ease;
 }
 
 .journey-step:hover {
-  transform: translateX(10px);
+  transform: translateY(-10px);
 
-  border-color: var(--primary-color);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
 }
 
-.journey-step span {
-  width: 60px;
+.step-number {
+  width: 70px;
 
-  height: 60px;
+  height: 70px;
 
   display: flex;
 
@@ -442,83 +1112,92 @@
 
   border-radius: 50%;
 
-  background: var(--primary-color);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 
   color: white;
 
-  font-weight: 700;
+  font-size: 1.4rem;
+
+  font-weight: 800;
+
+  margin-bottom: 2rem;
 }
 
 .journey-step h3 {
-  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+
+  margin-bottom: 1rem;
+
+  color: var(--primary-color);
 }
 
 .journey-step p {
-  margin: 0;
-
   color: var(--muted-text-color);
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+SCROLL REVEAL ANIMATIONS
+===================================================== */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* CARD STAGGER EFFECT */
+
+.objective-card:nth-child(1),
+.journey-step:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.objective-card:nth-child(2),
+.journey-step:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.objective-card:nth-child(3),
+.journey-step:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.journey-step:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+@media (max-width: 1000px) {
+  .journey-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey-container::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .journey-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================
    RESPONSIVE DESIGN
 ========================================== */
-
-@media (max-width: 1000px) {
-  .hero-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-description {
-    margin: auto;
-  }
-
-  .course-details {
-    justify-content: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .learning-flow {
-    justify-content: center;
-  }
-
-  .hero-image {
-    margin-top: 3rem;
-  }
-
-  .objective-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    padding: 5rem 0;
-  }
-
-  .image-background {
-    width: 280px;
-
-    height: 280px;
-  }
-
-  .floating-card {
-    display: none;
-  }
-
-  .intro-box {
-    padding: 2rem 1.5rem;
-  }
-
-  .journey-step {
-    flex-direction: column;
-
-    text-align: center;
-  }
-}
