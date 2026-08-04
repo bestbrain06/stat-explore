@@ -481,7 +481,9 @@
    color: #fff;
 }
 
+
 .reflection-points {
+   color:#000;
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
