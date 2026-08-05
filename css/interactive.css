@@ -1,0 +1,1177 @@
+/* =====================================================
+   INTERACTIVE HERO SECTION
+===================================================== */
+
+.interactive-hero {
+  padding: 8rem 0 6rem;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(135deg, var(--background-color), var(--surface-color));
+}
+
+.interactive-intro {
+  max-width: 900px;
+}
+
+.page-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 0.55rem 1.2rem;
+
+  border-radius: 50px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: var(--primary-color);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  margin-bottom: 1.5rem;
+}
+
+.interactive-intro h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+
+  line-height: 1.05;
+
+  margin-bottom: 2rem;
+}
+
+.interactive-intro > p {
+  max-width: 780px;
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+
+  color: var(--muted-text-color);
+}
+
+.interactive-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.interactive-meta span {
+  padding: 0.7rem 1.2rem;
+
+  background: white;
+
+  border-radius: 50px;
+
+  border: 1px solid var(--border-color);
+
+  font-weight: 600;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* =====================================================
+   VIDEO LEARNING SECTION
+===================================================== */
+
+.video-section {
+  padding: 7rem 0;
+}
+
+.video-library {
+  max-width: 950px;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4rem;
+}
+
+.video-card {
+  background: white;
+
+  padding: 2.8rem;
+
+  border-radius: 28px;
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.video-title h3 {
+  color: var(--primary-color);
+
+  font-size: 1.8rem;
+
+  margin-bottom: 1rem;
+}
+
+.video-title p {
+  color: var(--muted-text-color);
+
+  line-height: 1.8;
+
+  margin-bottom: 2rem;
+}
+
+.video-container {
+  width: 100%;
+
+  aspect-ratio: 16/9;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+}
+
+.video-container iframe {
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+}
+
+/* =====================================================
+   EXPLORER INTRODUCTION
+===================================================== */
+
+.explorer-intro {
+  padding: 7rem 0;
+
+  background: var(--surface-color);
+}
+
+.explorer-intro-content {
+  max-width: 1000px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.explorer-intro-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+
+  margin-bottom: 1.5rem;
+}
+
+.explorer-intro-content > p {
+  max-width: 750px;
+
+  margin: auto;
+
+  line-height: 1.8;
+
+  color: var(--muted-text-color);
+}
+
+.explorer-features {
+  margin-top: 4rem;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.8rem;
+}
+
+.explorer-features div {
+  background: white;
+
+  padding: 2.5rem;
+
+  border-radius: 25px;
+
+  border: 1px solid var(--border-color);
+
+  text-align: left;
+
+  transition: 0.3s ease;
+}
+
+.explorer-features div:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.explorer-features h3 {
+  color: var(--primary-color);
+
+  margin-bottom: 1rem;
+}
+
+/* =====================================================
+   INTERACTIVE LABORATORY
+===================================================== */
+
+.explorer-lab {
+  padding: 8rem 0;
+}
+
+.lab-heading {
+  max-width: 800px;
+
+  margin-bottom: 3rem;
+}
+
+.lab-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.lab-heading p {
+  line-height: 1.8;
+
+  color: var(--muted-text-color);
+}
+
+/* =====================================================
+   DATA INPUT CARD
+===================================================== */
+
+.data-input-area {
+  background: white;
+
+  padding: 3rem;
+
+  border-radius: 30px;
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+}
+
+.data-input-area label {
+  display: block;
+
+  font-weight: 700;
+
+  font-size: 1.1rem;
+
+  margin-bottom: 1rem;
+}
+
+#data-input {
+  width: 100%;
+
+  min-height: 160px;
+
+  padding: 1.5rem;
+
+  border-radius: 20px;
+
+  border: 1px solid var(--border-color);
+
+  resize: none;
+
+  font-size: 1rem;
+
+  font-family: inherit;
+}
+
+#data-input:focus {
+  outline: none;
+
+  border-color: var(--primary-color);
+}
+
+.input-help {
+  margin-top: 1rem;
+
+  color: var(--muted-text-color);
+}
+
+.lab-buttons {
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 1rem 2.5rem;
+
+  border-radius: 50px;
+
+  border: none;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.primary-button {
+  background: var(--primary-color);
+
+  color: white;
+}
+
+.secondary-button {
+  background: white;
+
+  border: 1px solid var(--border-color);
+}
+
+/* =====================================================
+   EMPTY EXPLORER STATE
+===================================================== */
+
+.empty-explorer {
+  margin-top: 3rem;
+
+  padding: 4rem 2rem;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08),
+    rgba(14, 165, 233, 0.08)
+  );
+
+  border: 1px dashed rgba(99, 102, 241, 0.3);
+}
+
+.empty-explorer h3 {
+  font-size: 2rem;
+
+  margin-bottom: 1rem;
+}
+
+.empty-explorer p {
+  color: var(--muted-text-color);
+}
+
+/* =====================================================
+   RESULTS CONTAINER
+===================================================== */
+
+.explorer-results {
+  margin-top: 5rem;
+}
+
+.result-block {
+  background: white;
+
+  padding: 3rem;
+
+  border-radius: 30px;
+
+  border: 1px solid var(--border-color);
+
+  margin-bottom: 3rem;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.section-heading h3 {
+  font-size: 2rem;
+
+  color: var(--primary-color);
+
+  margin-bottom: 1rem;
+}
+
+.section-heading p {
+  color: var(--muted-text-color);
+
+  line-height: 1.8;
+}
+
+/* =====================================================
+   DATA DISPLAY
+===================================================== */
+
+.data-display {
+  padding: 2rem;
+
+  background: #f8fafc;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   NUMBER LINE VISUALIZATION
+===================================================== */
+
+.spread-container {
+  background: #f8fafc;
+
+  padding: 3rem 2rem;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+}
+
+.number-line-wrapper {
+  padding: 3rem 1rem;
+}
+
+.number-line {
+  position: relative;
+
+  height: 6px;
+
+  background: #cbd5e1;
+
+  border-radius: 50px;
+}
+
+.data-marker {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary-color);
+
+  color: white;
+
+  font-weight: 700;
+
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.mean-marker {
+  position: absolute;
+
+  top: -45px;
+
+  width: 3px;
+
+  height: 95px;
+
+  background: #ef4444;
+
+  transform: translateX(-50%);
+}
+
+.mean-label {
+  position: absolute;
+
+  top: -30px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #ef4444;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.number-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 2rem;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   STATISTICAL MEASURE CARDS
+===================================================== */
+
+.measure-container {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1.5rem;
+}
+
+.measure-card {
+  padding: 2.5rem;
+
+  background: #f8fafc;
+
+  border-radius: 25px;
+
+  transition: 0.3s ease;
+}
+
+.measure-card:hover {
+  transform: translateY(-5px);
+
+  background: white;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.measure-icon {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: var(--primary-color);
+
+  font-weight: 800;
+
+  margin-bottom: 1.5rem;
+}
+
+.measure-card h4 {
+  font-size: 1.3rem;
+
+  margin-bottom: 1rem;
+}
+
+.measure-card p {
+  color: var(--muted-text-color);
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   DATA DISCOVERY SECTION
+===================================================== */
+
+.discovery-section {
+  padding: 3.5rem;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.12),
+    rgba(14, 165, 233, 0.12)
+  );
+}
+
+.discovery-section h3 {
+  font-size: 2rem;
+
+  color: var(--primary-color);
+}
+
+.insight-card {
+  display: grid;
+
+  grid-template-columns: 300px 1fr;
+
+  gap: 2rem;
+
+  margin-top: 2rem;
+}
+
+.insight-card div {
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 22px;
+
+  border: 1px solid var(--border-color);
+}
+
+.insight-card h4 {
+  color: var(--primary-color);
+
+  margin-bottom: 1rem;
+}
+
+.insight-card p {
+  line-height: 1.7;
+
+  color: var(--muted-text-color);
+}
+
+/* =====================================================
+   RESULTS AREA
+===================================================== */
+
+.explorer-results {
+  margin-top: 5rem;
+  animation: fadeUp 0.6s ease;
+}
+
+.result-block {
+  background: var(--background-color);
+
+  padding: 3rem;
+
+  border-radius: 32px;
+
+  border: 1px solid var(--border-color);
+
+  margin-bottom: 3rem;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+  margin-bottom: 2.5rem;
+}
+
+.section-heading h3 {
+  font-size: 2rem;
+
+  margin-bottom: 1rem;
+
+  color: var(--text-color);
+}
+
+.section-heading p {
+  color: var(--muted-text-color);
+
+  line-height: 1.8;
+}
+
+/* =====================================================
+   DATA DISPLAY
+===================================================== */
+
+.data-display {
+  background: var(--surface-color);
+
+  padding: 2rem;
+
+  border-radius: 20px;
+
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  letter-spacing: 1px;
+}
+
+/* =====================================================
+   DATA VISUALIZATION
+===================================================== */
+
+.spread-container {
+  background: var(--surface-color);
+
+  padding: 3rem 2rem;
+
+  border-radius: 25px;
+}
+
+.number-line-wrapper {
+  padding: 3rem 1rem;
+}
+
+.number-line {
+  height: 6px;
+
+  background: #cbd5e1;
+
+  position: relative;
+
+  border-radius: 20px;
+}
+
+.data-marker {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: var(--primary-color);
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 800;
+
+  font-size: 0.9rem;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mean-marker {
+  position: absolute;
+
+  top: -45px;
+
+  width: 3px;
+
+  height: 95px;
+
+  background: #ef4444;
+
+  transform: translateX(-50%);
+}
+
+.mean-label {
+  position: absolute;
+
+  top: -35px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #ef4444;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.number-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 2rem;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   MEASURE CARDS
+===================================================== */
+
+.measure-container {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1.8rem;
+}
+
+.measure-card {
+  background: var(--surface-color);
+
+  padding: 2.5rem;
+
+  border-radius: 25px;
+
+  border: 1px solid var(--border-color);
+
+  transition: transform 0.3s ease;
+}
+
+.measure-card:hover {
+  transform: translateY(-6px);
+}
+
+.measure-icon {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 18px;
+
+  background: rgba(99, 102, 241, 0.12);
+
+  color: var(--primary-color);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 800;
+
+  margin-bottom: 1.5rem;
+}
+
+.measure-card h4 {
+  font-size: 1.4rem;
+
+  margin-bottom: 1rem;
+}
+
+.measure-card p {
+  color: var(--muted-text-color);
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   DISCOVERY INSIGHT
+===================================================== */
+
+.discovery-section {
+  padding: 3.5rem;
+
+  border-radius: 32px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.12),
+    rgba(14, 165, 233, 0.12)
+  );
+}
+
+.discovery-section h3 {
+  font-size: 2rem;
+
+  margin-top: 0.8rem;
+}
+
+.insight-card {
+  display: grid;
+
+  grid-template-columns: 300px 1fr;
+
+  gap: 2rem;
+
+  margin-top: 2.5rem;
+}
+
+.insight-card div {
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 22px;
+}
+
+.insight-card h4 {
+  margin-bottom: 1rem;
+
+  color: var(--primary-color);
+}
+
+.insight-card p {
+  line-height: 1.7;
+
+  color: var(--muted-text-color);
+}
+
+/* =====================================================
+   REFLECTION SECTION
+===================================================== */
+
+.reflection-section {
+  padding: 8rem 0;
+
+  background: linear-gradient(
+    180deg,
+    var(--surface-color),
+    var(--background-color)
+  );
+}
+
+.reflection-content {
+  max-width: 1000px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.reflection-content h2 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+
+  margin-bottom: 1.5rem;
+}
+
+.reflection-content > p {
+  max-width: 750px;
+
+  margin: auto;
+
+  line-height: 1.8;
+
+  color: var(--muted-text-color);
+
+  font-size: 1.1rem;
+}
+
+.reflection-grid {
+  margin: 4rem 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+.reflection-card {
+  background: white;
+
+  padding: 2.5rem;
+
+  border-radius: 28px;
+
+  border: 1px solid var(--border-color);
+
+  text-align: left;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: 0.3s ease;
+}
+
+.reflection-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 5px;
+
+  background: var(--primary-color);
+
+  top: 0;
+
+  left: 0;
+}
+
+.reflection-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.reflection-card h3 {
+  color: var(--primary-color);
+
+  margin-bottom: 1rem;
+}
+
+.reflection-card p {
+  color: var(--muted-text-color);
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   REFLECTION BUTTON
+===================================================== */
+
+.reflection-button {
+  display: inline-flex;
+
+  padding: 1rem 3rem;
+
+  border-radius: 50px;
+
+  background: var(--primary-color);
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.reflection-button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.25);
+}
+
+.hidden {
+  display: none;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESULT ANIMATION
+===================================================== */
+
+.explorer-results {
+  animation: explorerReveal 0.6s ease forwards;
+}
+
+@keyframes explorerReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.empty-explorer {
+  animation: floatingCard 3s ease-in-out infinite;
+}
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.data-marker {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.data-marker:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.measure-card {
+  animation: cardReveal 0.5s ease forwards;
+}
+
+.measure-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.measure-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.measure-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .explorer-features,
+  .measure-container,
+  .reflection-grid,
+  .insight-card {
+    grid-template-columns: 1fr;
+  }
+
+  .data-input-area,
+  .result-block,
+  .discovery-section {
+    padding: 2rem;
+  }
+
+  .lab-buttons {
+    flex-direction: column;
+  }
+
+  .reflection-card {
+    text-align: center;
+  }
+}

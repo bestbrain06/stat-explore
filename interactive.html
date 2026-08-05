@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>StatExplore | Interactive Laboratory</title>
+
+    <link rel="stylesheet" href="css/variables.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/interactive.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         HEADER / NAVBAR
+    ====================================================== -->
+
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <h2>StatExplore</h2>
+
+            <span> Discovering Data Spread </span>
+          </a>
+
+          <button class="menu-toggle">
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+          </button>
+
+          <div class="nav-menu">
+            <ul class="nav-links">
+              <li>
+                <a href="index.html"> Home </a>
+              </li>
+
+              <li>
+                <a href="lesson.html"> Lesson </a>
+              </li>
+
+              <li>
+                <a href="interactive.html" class="active"> Interactive </a>
+              </li>
+
+              <li>
+                <a href="practice.html"> Practice </a>
+              </li>
+
+              <li>
+                <a href="assessment.html"> Assessment </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- =====================================================
+           INTERACTIVE HERO SECTION
+      ====================================================== -->
+
+      <section class="interactive-hero">
+        <div class="container">
+          <div class="interactive-intro">
+            <p class="page-label">Statistics Laboratory</p>
+
+            <h1>Explore How Data Spreads</h1>
+
+            <p>
+              Statistics becomes easier when you can see how numbers behave. Use
+              your own data to discover how measures of dispersion reveal
+              patterns, variation and consistency.
+            </p>
+
+            <div class="interactive-meta">
+              <span> SHS 2 Mathematics </span>
+
+              <span> Statistics </span>
+
+              <span> Measures of Dispersion </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     VIDEO LEARNING SECTION
+===================================================== -->
+
+      <section class="video-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="page-label">Video Learning</p>
+
+            <h2>Learn Through Visual Explanations</h2>
+
+            <p>
+              Strengthen your understanding of measures of dispersion through
+              visual explanations before exploring your own data in the
+              interactive laboratory.
+            </p>
+          </div>
+
+          <div class="video-library">
+            <!-- VIDEO 1 -->
+
+            <article class="video-card">
+              <div class="video-title">
+                <h3>
+                  Watch This To Understand Range, Variance and Standard
+                  Deviation Better
+                </h3>
+
+                <p>
+                  Explore how different measures of dispersion describe the
+                  spread of data and how standard deviation shows how far values
+                  are from the mean.
+                </p>
+              </div>
+
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/E4HAYd0QnRc?si=d2LYSrLHDRGJtYJ-"
+                  title="Range, Variance and Standard Deviation Explanation"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </article>
+
+            <!-- VIDEO 2 -->
+
+            <article class="video-card">
+              <div class="video-title">
+                <h3>Watch This To Understand Quartiles Better</h3>
+
+                <p>
+                  Learn how ordered data is divided into four sections and how
+                  quartiles help us understand the position of values in a data
+                  set.
+                </p>
+              </div>
+
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/oPw2OpIZ4DY?si=m7IWdjRa-9-S-CCT"
+                  title="Understanding Quartiles"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </article>
+
+            <!-- VIDEO 3 -->
+
+            <article class="video-card">
+              <div class="video-title">
+                <h3>Watch This To Understand Interquartile Range Better</h3>
+
+                <p>
+                  Discover how the interquartile range measures the spread of
+                  the middle 50% of a data set using Q1 and Q3.
+                </p>
+              </div>
+
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/VABsJBw1JqA?si=9Rk-RG9IklGoNvUB"
+                  title="Understanding Interquartile Range"
+                  frameborder="0"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- =====================================================
+           EXPLORER INTRODUCTION
+      ====================================================== -->
+
+      <!-- =====================================================
+     EXPLORER INTRODUCTION
+====================================================== -->
+
+      <section class="explorer-intro">
+        <div class="container">
+          <div class="explorer-intro-content">
+            <p class="page-label">Dispersion Explorer</p>
+
+            <h2>Your Data, Your Discovery</h2>
+
+            <p>
+              Enter your own values and explore how statistical measures reveal
+              patterns, variation and consistency within your dataset.
+            </p>
+
+            <div class="explorer-features">
+              <div>
+                <h3>Experiment</h3>
+
+                <p>
+                  Use real values from test scores, measurements or any dataset.
+                </p>
+              </div>
+
+              <div>
+                <h3>Observe</h3>
+
+                <p>See how changing values affects the spread of your data.</p>
+              </div>
+
+              <div>
+                <h3>Understand</h3>
+
+                <p>
+                  Discover why range, quartiles, variance and standard deviation
+                  behave differently.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     INTERACTIVE LABORATORY
+====================================================== -->
+
+      <section class="explorer-lab">
+        <div class="container">
+          <div class="lab-heading">
+            <p class="page-label">Interactive Laboratory</p>
+
+            <h2>Explore Your Data</h2>
+
+            <p>
+              Enter numbers below and discover what your data reveals about
+              spread and variation.
+            </p>
+          </div>
+
+          <!-- INPUT AREA -->
+
+          <div class="data-input-area">
+            <label for="data-input"> Enter Your Data </label>
+
+            <textarea
+              id="data-input"
+              placeholder="Example: 12, 15, 18, 20, 25"
+            ></textarea>
+
+            <p class="input-help">
+              Separate values using commas. Example: 5, 8, 10, 12, 15
+            </p>
+
+            <div class="lab-buttons">
+              <button id="analyze-data" class="primary-button">
+                Analyze Data
+              </button>
+
+              <button id="reset-data" class="secondary-button">
+                Reset Explorer
+              </button>
+            </div>
+
+            <p id="input-message" class="input-message"></p>
+          </div>
+
+          <!-- EMPTY STATE -->
+
+          <div id="empty-explorer" class="empty-explorer">
+            <h3>Waiting for Your Data</h3>
+
+            <p>Enter your values above to begin exploring.</p>
+          </div>
+
+          <!-- RESULTS -->
+
+          <div id="explorer-results" class="explorer-results hidden">
+            <!-- DATA -->
+
+            <section class="result-block">
+              <div class="section-heading">
+                <p class="page-label">Dataset</p>
+
+                <h3>Your Values</h3>
+              </div>
+
+              <div id="data-display" class="data-display"></div>
+            </section>
+
+            <!-- VISUALIZATION -->
+
+            <section class="result-block">
+              <div class="section-heading">
+                <p class="page-label">Visualization</p>
+
+                <h3>Seeing Your Data Spread</h3>
+
+                <p>
+                  The number line shows how close or separated your values are.
+                </p>
+              </div>
+
+              <div class="spread-container">
+                <div id="data-visualization" class="data-visualization"></div>
+              </div>
+            </section>
+
+            <!-- MEASURES -->
+
+            <section class="result-block">
+              <div class="section-heading">
+                <p class="page-label">Analysis</p>
+
+                <h3>Understanding Your Dispersion</h3>
+              </div>
+
+              <div class="measure-container">
+                <article class="measure-card">
+                  <div class="measure-icon">R</div>
+
+                  <h4>Range</h4>
+
+                  <p id="range-result"></p>
+
+                  <p id="range-explanation"></p>
+                </article>
+
+                <article class="measure-card">
+                  <div class="measure-icon">IQR</div>
+
+                  <h4>Quartiles & IQR</h4>
+
+                  <p id="quartile-result"></p>
+
+                  <p id="quartile-explanation"></p>
+                </article>
+
+                <article class="measure-card">
+                  <div class="measure-icon">σ²</div>
+
+                  <h4>Variance</h4>
+
+                  <p id="variance-result"></p>
+
+                  <p id="variance-explanation"></p>
+                </article>
+
+                <article class="measure-card">
+                  <div class="measure-icon">σ</div>
+
+                  <h4>Standard Deviation</h4>
+
+                  <p id="standard-result"></p>
+
+                  <p id="standard-explanation"></p>
+                </article>
+              </div>
+            </section>
+
+            <!-- INSIGHT -->
+
+            <section class="discovery-section">
+              <p class="page-label">Data Insight</p>
+
+              <h3>What Does Your Data Reveal?</h3>
+
+              <div class="insight-card">
+                <div>
+                  <h4>Spread Level</h4>
+
+                  <p id="spread-level"></p>
+                </div>
+
+                <div>
+                  <h4>Interpretation</h4>
+
+                  <p id="discovery-message"></p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+REFLECTION
+====================================================== -->
+
+      <section class="reflection-section">
+        <div class="container">
+          <div class="reflection-content">
+            <p class="page-label">Reflection</p>
+
+            <h2>Your Data Has A Story</h2>
+
+            <p>
+              Statistics is not only about calculating answers. It is about
+              understanding what numbers tell us.
+            </p>
+
+            <div class="reflection-grid">
+              <div class="reflection-card">
+                <h3>Think About Your Data</h3>
+
+                <p>Was your data closely grouped or widely spread?</p>
+              </div>
+
+              <div class="reflection-card">
+                <h3>Ask Yourself</h3>
+
+                <p>Which measure explained your dataset best?</p>
+              </div>
+
+              <div class="reflection-card">
+                <h3>Challenge</h3>
+
+                <p>
+                  Create another dataset with the same mean but different
+                  spread.
+                </p>
+              </div>
+            </div>
+
+            <a href="practice.html" class="reflection-button">
+              Continue To Practice
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- BRAND -->
+
+          <div class="footer-brand">
+            <h3>StatExplore</h3>
+
+            <p>
+              An interactive mathematics learning platform designed to help
+              students discover concepts through exploration, practice and
+              assessment.
+            </p>
+          </div>
+
+          <!-- LINKS -->
+
+          <div class="footer-links">
+            <h4>Explore</h4>
+
+            <ul>
+              <li>
+                <a href="index.html"> Home </a>
+              </li>
+
+              <li>
+                <a href="lesson.html"> Lesson </a>
+              </li>
+
+              <li>
+                <a href="interactive.html"> Interactive Lab </a>
+              </li>
+
+              <li>
+                <a href="practice.html"> Practice </a>
+              </li>
+
+              <li>
+                <a href="assessment.html"> Assessment </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- COURSE INFORMATION -->
+
+          <div class="footer-course">
+            <h4>Course</h4>
+
+            <p>Web Technologies in Mathematics</p>
+
+            <p>SHS 2 Mathematics</p>
+
+            <p>Statistics: Measures of Dispersion</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 StatExplore. All rights reserved.</p>
+
+          <p>Built for meaningful mathematics learning.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/navbar.js"></script>
+
+    <script src="js/interactive.js"></script>
+  </body>
+</html>

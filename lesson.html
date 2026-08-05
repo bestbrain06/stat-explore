@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>StatExplore | Measures of Dispersion</title>
+
+    <link rel="stylesheet" href="css/variables.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/lesson.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <h2>StatExplore</h2>
+
+            <span> Discovering Data Spread </span>
+          </a>
+
+          <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="nav-menu">
+            <ul class="nav-links">
+              <li>
+                <a href="index.html"> Home </a>
+              </li>
+
+              <li>
+                <a href="lesson.html" class="active"> Lesson </a>
+              </li>
+
+              <li>
+                <a href="interactive.html"> Interactive </a>
+              </li>
+
+              <li>
+                <a href="practice.html"> Practice </a>
+              </li>
+
+              <li>
+                <a href="assessment.html"> Assessment </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+
+      <section class="lesson-header">
+        <div class="container">
+          <div class="lesson-hero">
+            <span class="lesson-badge">
+              Lesson 01 • Statistics Exploration
+            </span>
+
+            <h1>Why Does Data Spread Matter?</h1>
+
+            <p class="hero-question">
+              Two groups can have the same average but tell completely different
+              stories.
+            </p>
+
+            <p>
+              Averages describe the centre of data, but they do not reveal how
+              values are distributed. In this lesson, you will discover how
+              mathematicians measure variation using measures of dispersion.
+            </p>
+
+            <a href="#lesson-start" class="primary-action">
+              Begin Exploration →
+            </a>
+
+            <div class="lesson-meta">
+              <span> Web Technologies in Mathematics </span>
+
+              <span> SHS 2 Mathematics </span>
+
+              <span> Statistics </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LESSON CONTENT -->
+
+      <section class="lesson-content" id="lesson-start">
+        <div class="container">
+          <!-- OBJECTIVES -->
+
+          <article class="concept-section">
+            <div class="concept-number">01</div>
+
+            <div class="concept-content">
+              <h2>What You Will Discover</h2>
+
+              <p>By the end of this lesson, you should be able to:</p>
+
+              <ul class="learning-list">
+                <li>Explain the meaning of dispersion in a data set.</li>
+
+                <li>Calculate range, quartiles and interquartile range.</li>
+
+                <li>Understand variance as a measure of spread.</li>
+
+                <li>Calculate and interpret standard deviation.</li>
+
+                <li>Compare data sets based on their variability.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- INTRODUCTION -->
+
+          <article class="concept-section">
+            <div class="concept-number">02</div>
+
+            <div class="concept-content">
+              <h2>Beyond the Average</h2>
+
+              <p>
+                The mean is one of the most common ways of describing data. It
+                tells us the central value of a data set. However, two data sets
+                can have the same mean while having very different patterns.
+              </p>
+
+              <div class="comparison">
+                <div>
+                  <h3>Class A</h3>
+
+                  <p>10, 11, 12, 13, 14</p>
+
+                  <p>Mean = 12</p>
+                </div>
+
+                <div>
+                  <h3>Class B</h3>
+
+                  <p>4, 8, 12, 16, 20</p>
+
+                  <p>Mean = 12</p>
+                </div>
+              </div>
+
+              <p>
+                Both classes have an average score of 12. But Class B has scores
+                that are much more spread out. This difference is called
+                <strong>dispersion</strong>.
+              </p>
+            </div>
+          </article>
+
+          <!-- DISPERSION -->
+
+          <article class="concept-section">
+            <div class="concept-number">03</div>
+
+            <div class="concept-content">
+              <h2>Understanding Dispersion</h2>
+
+              <p>
+                Dispersion describes how much the values in a data set differ
+                from one another or from the centre of the data. It tells us
+                whether data values are closely grouped together or widely
+                scattered.
+              </p>
+
+              <div class="idea-box">
+                <h3>Think About It</h3>
+
+                <p>
+                  A classroom where most students score around the same mark has
+                  low dispersion. A classroom where scores range from very low
+                  to very high has high dispersion.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- MEASURES OVERVIEW -->
+
+          <article class="concept-section">
+            <div class="concept-number">04</div>
+
+            <div class="concept-content">
+              <h2>Measures of Dispersion</h2>
+
+              <p>
+                Mathematicians use different methods to describe how data
+                spreads. The main measures are:
+              </p>
+
+              <div class="measure-list">
+                <div>
+                  <strong> Range </strong>
+
+                  <br />
+
+                  The difference between the largest and smallest values.
+                </div>
+
+                <div>
+                  <strong> Quartiles </strong>
+
+                  <br />
+
+                  Values that divide ordered data into four equal parts.
+                </div>
+
+                <div>
+                  <strong> Interquartile Range </strong>
+
+                  <br />
+
+                  The spread of the middle 50% of the data.
+                </div>
+
+                <div>
+                  <strong> Variance </strong>
+
+                  <br />
+
+                  The average squared distance of values from the mean.
+                </div>
+
+                <div>
+                  <strong> Standard Deviation </strong>
+
+                  <br />
+
+                  The typical distance of values from the mean.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- RANGE -->
+
+          <article class="concept-section">
+            <div class="concept-number">05</div>
+
+            <div class="concept-content">
+              <h2>Range: Measuring Total Spread</h2>
+
+              <p>
+                Range is the simplest measure of dispersion. It shows the
+                distance between the highest and lowest value in a data set.
+              </p>
+
+              <div class="formula-box">
+                Range = Highest Value − Lowest Value
+              </div>
+
+              <div class="worked-example">
+                <h3>Worked Example</h3>
+
+                <p>Find the range of:</p>
+
+                <p class="data-set">5, 8, 12, 15, 20</p>
+
+                <p>
+                  Step 1: Identify the highest value.
+
+                  <br />
+
+                  Highest value = 20
+                </p>
+
+                <p>
+                  Step 2: Identify the lowest value.
+
+                  <br />
+
+                  Lowest value = 5
+                </p>
+
+                <p>
+                  Step 3: Subtract.
+
+                  <br /><br />
+
+                  Range = 20 − 5
+
+                  <br />
+
+                  <strong> Range = 15 </strong>
+                </p>
+              </div>
+
+              <div class="idea-box">
+                <h3>Interpretation</h3>
+
+                <p>
+                  The scores in this data set cover a distance of 15 units from
+                  the smallest value to the largest value.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- QUARTILES -->
+
+          <article class="concept-section">
+            <div class="concept-number">06</div>
+
+            <div class="concept-content">
+              <h2>Quartiles: Understanding the Position of Data</h2>
+
+              <p>
+                Sometimes the range is affected by very large or very small
+                values. Quartiles give us another way to understand how data is
+                distributed by dividing an ordered data set into four equal
+                parts.
+              </p>
+
+              <div class="quartile-display">
+                <span> Q1 </span>
+
+                <span> Q2 (Median) </span>
+
+                <span> Q3 </span>
+              </div>
+
+              <p>The three important quartiles are:</p>
+
+              <ul class="learning-list">
+                <li>
+                  <strong>Q1:</strong> The lower quartile. It separates the
+                  lowest 25% of the data.
+                </li>
+
+                <li>
+                  <strong>Q2:</strong> The median. It separates the data into
+                  two equal halves.
+                </li>
+
+                <li>
+                  <strong>Q3:</strong> The upper quartile. It separates the
+                  highest 25% of the data.
+                </li>
+              </ul>
+
+              <div class="worked-example">
+                <h3>Worked Example</h3>
+
+                <p>Find Q1, Q2 and Q3 for:</p>
+
+                <p class="data-set">4, 7, 9, 12, 15, 18, 21</p>
+
+                <p>Step 1: Find the median.</p>
+
+                <p>4, 7, 9, <strong>12</strong>, 15, 18, 21</p>
+
+                <p>Q2 = 12</p>
+
+                <p>Step 2: Find the lower half.</p>
+
+                <p>4, 7, 9</p>
+
+                <p>Q1 = 7</p>
+
+                <p>Step 3: Find the upper half.</p>
+
+                <p>15, 18, 21</p>
+
+                <p>Q3 = 18</p>
+              </div>
+
+              <div class="idea-box">
+                <h3>Why Quartiles Matter</h3>
+
+                <p>
+                  Quartiles help us understand where values are located and
+                  whether data is concentrated in certain areas.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- INTERQUARTILE RANGE -->
+
+          <article class="concept-section">
+            <div class="concept-number">07</div>
+
+            <div class="concept-content">
+              <h2>Interquartile Range (IQR)</h2>
+
+              <p>
+                The interquartile range measures the spread of the middle 50% of
+                a data set. Unlike range, IQR is not strongly affected by
+                extreme values.
+              </p>
+
+              <div class="formula-box">IQR = Q3 − Q1</div>
+
+              <div class="worked-example">
+                <h3>Worked Example</h3>
+
+                <p>Given:</p>
+
+                <p>
+                  Q3 = 25
+
+                  <br />
+
+                  Q1 = 10
+                </p>
+
+                <p>Using:</p>
+
+                <p>IQR = Q3 − Q1</p>
+
+                <p>IQR = 25 − 10</p>
+
+                <p>
+                  <strong> IQR = 15 </strong>
+                </p>
+              </div>
+
+              <div class="idea-box">
+                <h3>Interpretation</h3>
+
+                <p>
+                  The middle 50% of the data values are spread across 15 units.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- VARIANCE -->
+
+          <article class="concept-section">
+            <div class="concept-number">08</div>
+
+            <div class="concept-content">
+              <h2>Variance: Measuring Squared Spread</h2>
+
+              <p>
+                Range and IQR measure spread by looking at distances between
+                values. Variance takes another approach. It measures how far
+                each value is from the mean.
+              </p>
+
+              <p>
+                These differences are called <strong>deviations</strong>.
+                Because positive and negative deviations cancel each other, we
+                square the deviations before finding the average.
+              </p>
+
+              <div class="formula-box">
+                Variance = Average of Squared Deviations from the Mean
+              </div>
+
+              <div class="worked-example">
+                <h3>Worked Example</h3>
+
+                <p>Find the variance of:</p>
+
+                <p class="data-set">2, 4, 6</p>
+
+                <h4>Step 1: Find the Mean</h4>
+
+                <p>Mean = (2 + 4 + 6) ÷ 3</p>
+
+                <p>Mean = 4</p>
+
+                <h4>Step 2: Find Deviations</h4>
+
+                <p>Value − Mean</p>
+
+                <p>
+                  2 − 4 = -2
+
+                  <br />
+
+                  4 − 4 = 0
+
+                  <br />
+
+                  6 − 4 = 2
+                </p>
+
+                <h4>Step 3: Square the Deviations</h4>
+
+                <p>
+                  (-2)² = 4
+
+                  <br />
+
+                  0² = 0
+
+                  <br />
+
+                  2² = 4
+                </p>
+
+                <h4>Step 4: Find Average Squared Deviation</h4>
+
+                <p>Variance = (4 + 0 + 4) ÷ 3</p>
+
+                <p>Variance = 8 ÷ 3</p>
+
+                <p>
+                  <strong> Variance = 2.67 </strong>
+                </p>
+              </div>
+
+              <div class="idea-box">
+                <h3>Important Idea</h3>
+
+                <p>
+                  A larger variance means the data values are more spread out
+                  from the mean. A smaller variance means the values are closer
+                  to the mean.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- STANDARD DEVIATION -->
+
+          <article class="concept-section">
+            <div class="concept-number">09</div>
+
+            <div class="concept-content">
+              <h2>Standard Deviation: The Typical Spread of Data</h2>
+
+              <p>
+                Variance gives us the squared spread of data, but its value is
+                expressed in squared units. Standard deviation solves this
+                problem by taking the square root of the variance. This returns
+                the measurement back to the original units of the data.
+              </p>
+
+              <div class="formula-box">Standard Deviation = √Variance</div>
+
+              <p>
+                Standard deviation tells us the typical distance between data
+                values and the mean.
+              </p>
+
+              <div class="worked-example">
+                <h3>Worked Example</h3>
+
+                <p>Using the variance from the previous example:</p>
+
+                <p class="data-set">2, 4, 6</p>
+
+                <p>We found:</p>
+
+                <p>Variance = 2.67</p>
+
+                <h4>Step 1: Take the square root</h4>
+
+                <p>Standard Deviation = √2.67</p>
+
+                <p>Standard Deviation ≈ 1.63</p>
+
+                <p>
+                  <strong> Standard Deviation = 1.63 </strong>
+                </p>
+              </div>
+
+              <div class="idea-box">
+                <h3>Interpretation</h3>
+
+                <p>
+                  The standard deviation of 1.63 means that the values in the
+                  data set are typically about 1.63 units away from the mean.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- STANDARD DEVIATION COMPARISON -->
+
+          <article class="concept-section">
+            <div class="concept-number">10</div>
+
+            <div class="concept-content">
+              <h2>Comparing Data Using Standard Deviation</h2>
+
+              <p>
+                Standard deviation allows us to compare how consistent different
+                data sets are. A smaller standard deviation means the values are
+                closer together. A larger standard deviation means the values
+                are more spread out.
+              </p>
+
+              <div class="comparison">
+                <div>
+                  <h3>Data Set A</h3>
+
+                  <p>48, 49, 50, 51, 52</p>
+
+                  <p>Small spread</p>
+                </div>
+
+                <div>
+                  <h3>Data Set B</h3>
+
+                  <p>20, 35, 50, 65, 80</p>
+
+                  <p>Large spread</p>
+                </div>
+              </div>
+
+              <p>
+                Although both data sets may have the same mean, Data Set B has
+                greater variation because the values are farther away from the
+                centre.
+              </p>
+            </div>
+          </article>
+
+          <!-- COMPLETE UNDERSTANDING -->
+
+          <article class="concept-section">
+            <div class="concept-number">11</div>
+
+            <div class="concept-content">
+              <h2>Choosing the Right Measure</h2>
+
+              <p>
+                Different measures of dispersion provide different information
+                about data.
+              </p>
+
+              <div class="measure-list">
+                <div>
+                  <strong> Range </strong>
+
+                  <br />
+
+                  Useful for quickly finding the total spread.
+                </div>
+
+                <div>
+                  <strong> Quartiles and IQR </strong>
+
+                  <br />
+
+                  Useful when extreme values may affect the data.
+                </div>
+
+                <div>
+                  <strong> Variance </strong>
+
+                  <br />
+
+                  Useful in advanced statistical calculations.
+                </div>
+
+                <div>
+                  <strong> Standard Deviation </strong>
+
+                  <br />
+
+                  The most common measure for describing overall variability.
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- NEXT LEARNING STEP -->
+
+      <section class="lesson-next">
+        <div class="container">
+          <h2>Ready to Experiment With Data?</h2>
+
+          <p>
+            Now that you understand measures of dispersion, explore how changing
+            data values affects range, IQR, variance and standard deviation.
+          </p>
+
+          <a href="interactive.html"> Enter Data Laboratory → </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- BRAND SECTION -->
+
+          <div class="footer-brand">
+            <h3>StatExplore</h3>
+
+            <p>
+              An interactive mathematics learning platform designed to help
+              students discover concepts through exploration, practice and
+              assessment.
+            </p>
+          </div>
+
+          <!-- QUICK LINKS -->
+
+          <div class="footer-links">
+            <h4>Explore</h4>
+
+            <ul>
+              <li>
+                <a href="index.html"> Home </a>
+              </li>
+
+              <li>
+                <a href="lesson.html"> Lessons </a>
+              </li>
+
+              <li>
+                <a href="interactive.html"> Interactive Lab </a>
+              </li>
+
+              <li>
+                <a href="practice.html"> Practice </a>
+              </li>
+
+              <li>
+                <a href="assessment.html"> Assessment </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- COURSE -->
+
+          <div class="footer-course">
+            <h4>Course</h4>
+
+            <p>Web Technologies in Mathematics</p>
+
+            <p>SHS 2 Mathematics</p>
+
+            <p>Statistics: Measures of Dispersion</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 StatExplore. All rights reserved.</p>
+
+          <p>Built for meaningful mathematics learning.</p>
+        </div>
+      </div>
+    </footer>
+      <script src="js/navbar.js"></script>
+    <script src="js/lesson.js"></script>
+  </body>
+</html>
