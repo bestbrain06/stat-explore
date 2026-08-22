@@ -1,405 +1,346 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const STORAGE_KEY = "statexplore-practice";
+
   const container = document.getElementById("practice-container");
 
-  const completedCount = document.getElementById("completed-count");
-
-  const totalCount = document.getElementById("total-count");
-
+  const completedEl = document.getElementById("completed");
+  const remainingEl = document.getElementById("remaining");
+  const accuracyEl = document.getElementById("accuracy");
   const progressFill = document.getElementById("progress-fill");
+  const progressText = document.getElementById("progress-text");
 
-  const STORAGE_KEY = "statexplore_practice_progress";
+  const completion = document.getElementById("completion");
+  const finalScore = document.getElementById("final-score");
 
-  let practiceState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+  const resetBtn = document.getElementById("reset-btn");
+  const retryBtn = document.getElementById("retry-btn");
+
+  let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
     completed: [],
     answers: {},
+    attempts: 0,
+    correct: 0,
   };
 
-  totalCount.textContent = practiceQuestions.length;
+  function save() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
 
-  /* =====================================================
-   RENDER QUESTIONS
-===================================================== */
-
-  function renderQuestions() {
+  function render() {
     container.innerHTML = "";
 
-    practiceQuestions.forEach((question) => {
+    practiceQuestions.forEach((q) => {
       const card = document.createElement("article");
-
       card.className = "question-card";
+      card.dataset.id = q.id;
 
-      card.dataset.id = question.id;
+      const completed = state.completed.includes(q.id);
+
+      if (completed) card.classList.add("completed");
 
       card.innerHTML = `
+      <div class="completed-badge">✓ Completed</div>
 
-<div class="question-header">
+      <div class="question-header">
+        <span class="question-number">Activity ${q.id}</span>
+        <h3>${q.title}</h3>
+        <p class="topic">${q.topic}</p>
+      </div>
 
-<span>
-Activity ${question.id}
-</span>
+      <p class="question-text">${q.question}</p>
 
+      ${q.data ? `<div class="data-box">${q.data}</div>` : ""}
 
-<h2>
-${question.title}
-</h2>
+      ${createAnswer(q)}
 
+      <button class="hint-btn">💡 Show Hint</button>
 
-<p class="topic-label">
-${question.topic}
-</p>
+      <div class="hint-content">
+        <p></p>
+      </div>
 
+      <div class="actions">
+        <button class="check-btn" ${completed ? "disabled" : ""}>
+          ${completed ? "Completed ✓" : "Check Answer"}
+        </button>
 
-</div>
+        <button class="explain-btn" style="${completed ? "display:block" : "display:none"}">
+          Show Explanation
+        </button>
+      </div>
 
+      <div class="feedback"></div>
 
-
-
-<div class="question-body">
-
-
-<p>
-${question.question}
-</p>
-
-
-
-
-${
-  question.data
-    ? `
-<div class="data-box">
-
-${question.data}
-
-</div>
-`
-    : ""
-}
-
-
-
-
-
-<div class="hint-area">
-
-
-<button class="hint-button">
-
-💡 Show Hint
-
-</button>
-
-
-<div class="hint-content">
-
-<p class="hint-text"></p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-<div class="answer-container">
-
-${createAnswer(question)}
-
-</div>
-
-
-
-
-
-<button class="check-answer-btn">
-
-Check Answer
-
-</button>
-
-
-
-
-
-<div class="feedback">
-
-</div>
-
-
-
-
-
-<button class="explanation-btn hidden">
-
-View Explanation
-
-</button>
-
-
-
-
-
-<div class="explanation hidden">
-
-
-<h3>
-Worked Explanation
-</h3>
-
-
-<p>
-${question.explanation}
-</p>
-
-
-
-
-<div class="concept-box">
-
-<strong>
-Concept Reminder
-</strong>
-
-
-<p>
-${question.concept}
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-
-</div>
-
-`;
+      <div class="explanation">
+        ${q.explanation}
+        <hr>
+        <strong>Concept Reminder</strong>
+        <p>${q.concept}</p>
+      </div>
+    `;
 
       container.appendChild(card);
+
+      restore(card, q);
     });
 
     attachEvents();
-
-    restoreState();
+    updateProgress();
   }
 
-  /* =====================================================
- CREATE ANSWERS
-===================================================== */
-
-  function createAnswer(question) {
-    if (question.type === "multiple-choice" || question.type === "true-false") {
+  function createAnswer(q) {
+    if (q.type === "multiple-choice" || q.type === "true-false") {
       return `
-
-
-<div class="options">
-
-
-${question.options
-  .map(
-    (option) => `
-
-
-<label class="option">
-
-
-<input 
-type="radio"
-name="question-${question.id}"
-value="${option}"
->
-
-
-<span>
-${option}
-</span>
-
-
-</label>
-
-
-`,
-  )
-  .join("")}
-
-
-</div>
-
-
-`;
+      <div class="options">
+        ${q.options
+          .map(
+            (o) => `
+          <label class="option">
+            <input type="radio" name="q${q.id}" value="${o}">
+            <span>${o}</span>
+          </label>
+        `,
+          )
+          .join("")}
+      </div>
+    `;
     }
 
-    return `
+    if (q.fields) {
+      return `
+      <div class="multi-inputs">
+        ${q.fields
+          .map(
+            (f, i) => `
+          <div>
+            <label>${f}</label>
+            <input class="answer-input" data-index="${i}" type="number">
+          </div>
+        `,
+          )
+          .join("")}
+      </div>
+    `;
+    }
 
-
-<input
-
-class="answer-input"
-
-type="number"
-
-placeholder="Enter your answer"
-
->
-
-
-`;
+    return `<input class="answer-input" type="number" step="any">`;
   }
-
-  /* =====================================================
- EVENTS
-===================================================== */
 
   function attachEvents() {
-    document.querySelectorAll(".hint-button").forEach((button) => {
-      let currentHint = 0;
-
-      button.onclick = () => {
-        const card = button.closest(".question-card");
-
-        const question = practiceQuestions.find((q) => q.id == card.dataset.id);
-
-        const text = card.querySelector(".hint-text");
+    document.querySelectorAll(".hint-btn").forEach((btn) => {
+      btn.onclick = () => {
+        const card = btn.closest(".question-card");
+        const q = getQuestion(card);
 
         const box = card.querySelector(".hint-content");
+        const text = box.querySelector("p");
 
-        if (currentHint < question.hints.length) {
-          text.textContent = question.hints[currentHint];
+        let index = Number(card.dataset.hint || 0);
 
-          box.classList.add("active");
-
-          currentHint++;
-
-          button.textContent =
-            currentHint < question.hints.length
-              ? "Show Another Hint"
-              : "Hide Hint";
-        } else {
-          box.classList.remove("active");
-
-          button.textContent = "💡 Show Hint";
-
-          currentHint = 0;
+        if (box.classList.contains("show") && index >= q.hints.length) {
+          box.classList.remove("show");
+          btn.textContent = "💡 Show Hint";
+          card.dataset.hint = 0;
+          return;
         }
+
+        text.textContent = q.hints[index];
+
+        box.classList.add("show");
+
+        index++;
+
+        card.dataset.hint = index;
+
+        btn.textContent =
+          index < q.hints.length ? "💡 Show Another Hint" : "Hide Hint";
       };
     });
 
-    document.querySelectorAll(".check-answer-btn").forEach((button) => {
-      button.onclick = () => {
-        const card = button.closest(".question-card");
+    document.querySelectorAll(".check-btn").forEach((btn) => {
+      btn.onclick = () => check(btn);
+    });
 
-        const id = Number(card.dataset.id);
+    document.querySelectorAll(".explain-btn").forEach((btn) => {
+      btn.onclick = () => {
+        const exp = btn.closest(".question-card").querySelector(".explanation");
 
-        const question = practiceQuestions.find((q) => q.id === id);
+        exp.classList.toggle("show");
 
-        checkAnswer(card, question);
+        btn.textContent = exp.classList.contains("show")
+          ? "Hide Explanation"
+          : "Show Explanation";
       };
     });
   }
 
-  /* =====================================================
- CHECK ANSWER
-===================================================== */
+  function check(button) {
+    const card = button.closest(".question-card");
+    const q = getQuestion(card);
+    const feedback = card.querySelector(".feedback");
 
-  function checkAnswer(card, question) {
-    let userAnswer;
+    let user;
 
-    const selected = card.querySelector("input[type='radio']:checked");
+    if (q.type === "multiple-choice" || q.type === "true-false") {
+      const checked = card.querySelector("input:checked");
 
-    if (selected) {
-      userAnswer = selected.value;
+      if (!checked) {
+        return showFeedback(feedback, "Select an answer.", false);
+      }
+
+      user = checked.value;
+    } else if (q.fields) {
+      const values = [...card.querySelectorAll(".answer-input")].map((i) =>
+        Number(i.value),
+      );
+
+      if (values.some(Number.isNaN)) {
+        return showFeedback(feedback, "Complete all answers.", false);
+      }
+
+      user = values;
     } else {
       const input = card.querySelector(".answer-input");
 
-      userAnswer = input.value;
-    }
-
-    const feedback = card.querySelector(".feedback");
-
-    if (isCorrect(userAnswer, question.answer)) {
-      feedback.textContent = "✓ Correct! Your understanding is improving.";
-
-      feedback.className = "feedback correct";
-
-      if (!practiceState.completed.includes(question.id)) {
-        practiceState.completed.push(question.id);
+      if (input.value === "") {
+        return showFeedback(feedback, "Enter your answer.", false);
       }
-    } else {
-      feedback.textContent = "Not quite yet. Review the hint and try again.";
 
-      feedback.className = "feedback incorrect";
+      user = Number(input.value);
     }
 
-    practiceState.answers[question.id] = userAnswer;
+    state.attempts++;
 
-    saveProgress();
+    const correct = validate(user, q.answer);
 
-    const explanation = card.querySelector(".explanation-btn");
+    if (correct) {
+      state.correct++;
 
-    explanation.classList.remove("hidden");
+      if (!state.completed.includes(q.id)) state.completed.push(q.id);
 
-    explanation.onclick = () => {
-      card.querySelector(".explanation").classList.toggle("hidden");
-    };
+      state.answers[q.id] = user;
+
+      save();
+
+      card.classList.add("completed");
+
+      button.disabled = true;
+      button.textContent = "Completed ✓";
+
+      card.querySelectorAll("input").forEach((i) => (i.disabled = true));
+
+      card.querySelector(".explain-btn").style.display = "block";
+
+      showFeedback(feedback, "✓ Correct! Activity completed.", true);
+    } else {
+      state.answers[q.id] = user;
+
+      save();
+
+      showFeedback(feedback, "Incorrect. Try again.", false);
+    }
 
     updateProgress();
   }
 
-  /* =====================================================
- ANSWER VALIDATION
-===================================================== */
-
-  function isCorrect(user, answer) {
+  function validate(user, answer) {
     if (Array.isArray(answer)) {
-      return false;
+      return user.every((v, i) => Math.abs(v - answer[i]) < 0.01);
     }
 
     if (typeof answer === "number") {
-      return Math.abs(Number(user) - answer) < 0.01;
+      return Math.abs(user - answer) < 0.01;
     }
 
-    return (
-      String(user).trim().toLowerCase() === String(answer).trim().toLowerCase()
-    );
+    return String(user).toLowerCase() === String(answer).toLowerCase();
   }
 
-  /* =====================================================
- STORAGE
-===================================================== */
+  function restore(card, q) {
+    const saved = state.answers[q.id];
 
-  function saveProgress() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(practiceState));
+    if (saved === undefined) return;
+
+    if (q.type === "multiple-choice" || q.type === "true-false") {
+      const radio = card.querySelector(`input[value="${saved}"]`);
+
+      if (radio) radio.checked = true;
+    } else if (Array.isArray(saved)) {
+      card.querySelectorAll(".answer-input").forEach((i, index) => {
+        i.value = saved[index];
+      });
+    } else {
+      card.querySelector(".answer-input").value = saved;
+    }
+
+    if (state.completed.includes(q.id)) {
+      card.querySelector(".check-btn").disabled = true;
+      card.querySelector(".check-btn").textContent = "Completed ✓";
+
+      card.querySelector(".explain-btn").style.display = "block";
+
+      card.querySelectorAll("input").forEach((i) => (i.disabled = true));
+    }
   }
 
-  function restoreState() {
-    practiceState.completed.forEach((id) => {
-      const card = document.querySelector(`.question-card[data-id="${id}"]`);
-
-      if (card) {
-        card.classList.add("completed");
-      }
-    });
-
-    updateProgress();
+  function showFeedback(el, msg, ok) {
+    el.className = `feedback show ${ok ? "correct" : "wrong"}`;
+    el.textContent = msg;
   }
 
-  /* =====================================================
- PROGRESS
-===================================================== */
+  function getQuestion(card) {
+    const id = Number(card.dataset.id);
+
+    return practiceQuestions.find((q) => q.id === id);
+  }
 
   function updateProgress() {
-    const completed = practiceState.completed.length;
+    const total = practiceQuestions.length;
 
-    completedCount.textContent = completed;
+    const completed = state.completed.length;
 
-    progressFill.style.width = `${(completed / practiceQuestions.length) * 100}%`;
+    const remaining = total - completed;
+
+    const accuracy =
+      state.attempts === 0
+        ? 0
+        : Math.round((state.correct / state.attempts) * 100);
+
+    const progress = Math.round((completed / total) * 100);
+
+    completedEl.textContent = completed;
+    remainingEl.textContent = remaining;
+    accuracyEl.textContent = `${accuracy}%`;
+
+    progressFill.style.width = `${progress}%`;
+    progressText.textContent = `${progress}%`;
+
+    if (completed === total) {
+      completion.classList.remove("hidden");
+      finalScore.textContent = `${completed} / ${total}`;
+    } else {
+      completion.classList.add("hidden");
+    }
   }
 
-  renderQuestions();
+  function resetPractice() {
+    if (!confirm("Reset all practice progress?")) return;
+
+    localStorage.removeItem(STORAGE_KEY);
+
+    state = {
+      completed: [],
+      answers: {},
+      attempts: 0,
+      correct: 0,
+    };
+
+    render();
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  resetBtn.onclick = resetPractice;
+  retryBtn.onclick = resetPractice;
+
+  render();
 });
