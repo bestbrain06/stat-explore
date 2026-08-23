@@ -2,178 +2,547 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>About | StatExplore</title>
 
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/about.css" />
   </head>
+
   <body>
-    <!-- ===== Header (same as every page) ===== -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
     <header class="header">
       <div class="container navbar">
-        <div class="logo">
+        <a href="index.html" class="logo">
           <h2>StatExplore</h2>
           <span>Interactive Laboratory</span>
-        </div>
+        </a>
 
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="navMenu">
           <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lesson.html">Lesson</a></li>
-            <li><a href="interactive.html">Interactive</a></li>
-            <li><a href="practice.html">Practice</a></li>
-            <li><a href="assessment.html">Assessment</a></li>
-            <li><a href="about.html" class="active">About</a></li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+
+            <li>
+              <a href="lesson.html">Lesson</a>
+            </li>
+
+            <li>
+              <a href="interactive.html">Interactive</a>
+            </li>
+
+            <li>
+              <a href="practice.html">Practice</a>
+            </li>
+
+            <li>
+              <a href="assessment.html">Assessment</a>
+            </li>
+
+            <li>
+              <a href="about.html" class="active"> About </a>
+            </li>
           </ul>
         </nav>
 
-        <button class="menu-toggle">
-          <span></span><span></span><span></span>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </header>
 
-    <!-- ===== Hero ===== -->
+    <main>
+      <!-- =====================================================
+           HERO
+      ====================================================== -->
 
-    <section class="about-hero">
-      <div class="container hero-content">
-        <span class="hero-badge">Educational Project</span>
+      <section class="stat-hero">
+        <div class="container stat-hero-grid">
+          <div class="stat-hero-content">
+            <span class="eyebrow"> STATISTICAL LEARNING ENVIRONMENT </span>
 
-        <h1>About StatExplore</h1>
+            <h1>
+              Understand the
+              <span>spread</span>, not just the number.
+            </h1>
 
-        <p>
-          StatExplore is an interactive learning platform developed to help
-          Senior High School students explore the Measures of Dispersion through
-          engaging lessons, visual experimentation, guided practice and
-          assessment.
-        </p>
-      </div>
-    </section>
+            <p>
+              StatExplore is an interactive mathematics learning platform
+              designed to help Senior High School students understand Measures
+              of Dispersion by connecting statistical concepts with
+              visualization, experimentation, practice and assessment.
+            </p>
 
-    <!-- ===== Project ===== -->
+            <div class="hero-actions">
+              <a href="interactive.html" class="btn btn-primary">
+                Enter the Laboratory
+              </a>
 
-    <section class="project-info">
-      <div class="container">
-        <div class="section-title">
-          <h2>Project Overview</h2>
-          <p class="section-description">
-            This application was developed as a university group project for the
-            Department of Mathematics Education.
-          </p>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3>Institution</h3>
-            <p>University of Education, Winneba</p>
+              <a href="lesson.html" class="btn btn-secondary">
+                Learn the Concepts
+              </a>
+            </div>
           </div>
 
-          <div class="stat-card">
-            <h3>Department</h3>
-            <p>Mathematics Education</p>
-          </div>
+          <!-- Statistical visual -->
 
-          <div class="stat-card">
-            <h3>Project</h3>
-            <p>StatExplore</p>
-          </div>
+          <div class="distribution-visual">
+            <div class="visual-header">
+              <span>DATA DISTRIBUTION</span>
 
-          <div class="stat-card">
-            <h3>Topic</h3>
-            <p>Measures of Dispersion</p>
-          </div>
-        </div>
-      </div>
-    </section>
+              <span class="live-indicator"> ● LIVE </span>
+            </div>
 
-    <!-- ===== Team ===== -->
+            <div class="chart-area">
+              <div class="chart-line"></div>
 
-    <section class="team-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Development Team</h2>
-          <p class="section-description">
-            Group members who collaborated in the design and development of
-            StatExplore.
-          </p>
-        </div>
+              <div class="bar bar-1"></div>
+              <div class="bar bar-2"></div>
+              <div class="bar bar-3"></div>
+              <div class="bar bar-4"></div>
+              <div class="bar bar-5"></div>
+              <div class="bar bar-6"></div>
+              <div class="bar bar-7"></div>
+              <div class="bar bar-8"></div>
+              <div class="bar bar-9"></div>
+            </div>
 
-        <div class="team-grid">
-          <div class="member-card">
-            <div class="avatar">IC</div>
-            <h3>Ikechukwu Chidera</h3>
-            <span>5240110113</span>
-          </div>
+            <div class="measure-row">
+              <div>
+                <span>Range</span>
+                <strong>18</strong>
+              </div>
 
-          <div class="member-card">
-            <div class="avatar">AE</div>
-            <h3>Adambire Ebenezer Ayidaana</h3>
-            <span>5240110158</span>
-          </div>
+              <div>
+                <span>IQR</span>
+                <strong>9.5</strong>
+              </div>
 
-          <div class="member-card">
-            <div class="avatar">FE</div>
-            <h3>Fosu Emmanuella</h3>
-            <span>5240110134</span>
-          </div>
-
-          <div class="member-card">
-            <div class="avatar">SF</div>
-            <h3>Salim Francis</h3>
-            <span>5240110044</span>
-          </div>
-
-          <div class="member-card">
-            <div class="avatar">BK</div>
-            <h3>Bille Kuupoyiri</h3>
-            <span>5240110068</span>
+              <div>
+                <span>SD</span>
+                <strong>3.8</strong>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===== Footer ===== -->
+      <!-- =====================================================
+           PROJECT INTRODUCTION
+      ====================================================== -->
+
+      <section class="intro-section">
+        <div class="container intro-grid">
+          <div class="intro-heading">
+            <span class="section-number"> 01 </span>
+
+            <span class="section-label"> THE IDEA </span>
+
+            <h2>Statistics becomes clearer when students can see it.</h2>
+          </div>
+
+          <div class="intro-text">
+            <p>
+              Measures of Dispersion help us describe how data values are
+              distributed around a dataset. Concepts such as range, quartiles,
+              interquartile range, variance and standard deviation provide
+              important information about the spread of data.
+            </p>
+
+            <p>
+              StatExplore was created to give students a more active way of
+              learning these ideas. Instead of only reading formulas, learners
+              can enter data, observe changes, calculate measures and interpret
+              what those results mean.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           PROJECT FACTS
+      ====================================================== -->
+
+      <section class="facts-section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-label"> 02 — PROJECT PROFILE </span>
+
+            <h2>At a glance</h2>
+          </div>
+
+          <div class="facts-grid">
+            <article class="fact-card">
+              <span class="fact-index"> 01 </span>
+
+              <span class="fact-title"> Institution </span>
+
+              <h3>University of Education, Winneba</h3>
+            </article>
+
+            <article class="fact-card">
+              <span class="fact-index"> 02 </span>
+
+              <span class="fact-title"> Department </span>
+
+              <h3>Mathematics Education</h3>
+            </article>
+
+            <article class="fact-card">
+              <span class="fact-index"> 03 </span>
+
+              <span class="fact-title"> Learning Area </span>
+
+              <h3>Measures of Dispersion</h3>
+            </article>
+
+            <article class="fact-card">
+              <span class="fact-index"> 04 </span>
+
+              <span class="fact-title"> Platform </span>
+
+              <h3>Interactive Web Application</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           LEARNING MODEL
+      ====================================================== -->
+
+      <section class="learning-section">
+        <div class="container">
+          <div class="learning-heading">
+            <span class="section-label"> 03 — LEARNING MODEL </span>
+
+            <h2>Explore. Calculate. Interpret.</h2>
+
+            <p>
+              StatExplore follows a simple learning cycle that encourages
+              students to move from observing data to making mathematical
+              conclusions.
+            </p>
+          </div>
+
+          <div class="learning-grid">
+            <article class="learning-card">
+              <div class="learning-number">01</div>
+
+              <h3>Explore</h3>
+
+              <p>
+                Enter or examine datasets and observe how the values are
+                distributed.
+              </p>
+            </article>
+
+            <article class="learning-card active">
+              <div class="learning-number">02</div>
+
+              <h3>Calculate</h3>
+
+              <p>
+                Determine the range, quartiles, IQR, variance and standard
+                deviation.
+              </p>
+            </article>
+
+            <article class="learning-card">
+              <div class="learning-number">03</div>
+
+              <h3>Interpret</h3>
+
+              <p>
+                Connect the numerical results to what they reveal about the
+                spread of the dataset.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           STATISTICAL MEASURES
+      ====================================================== -->
+
+      <section class="measures-section">
+        <div class="container measures-grid">
+          <div class="measures-intro">
+            <span class="section-label"> 04 — WHAT WE EXPLORE </span>
+
+            <h2>Five ways to understand variation.</h2>
+
+            <p>
+              The laboratory focuses on the major measures students need to
+              understand how much data values differ from one another.
+            </p>
+          </div>
+
+          <div class="measure-list">
+            <div class="measure-item">
+              <span class="measure-symbol"> R </span>
+
+              <div>
+                <h3>Range</h3>
+                <p>Difference between the largest and smallest values.</p>
+              </div>
+            </div>
+
+            <div class="measure-item">
+              <span class="measure-symbol"> Q </span>
+
+              <div>
+                <h3>Quartiles</h3>
+                <p>Values that divide ordered data into four parts.</p>
+              </div>
+            </div>
+
+            <div class="measure-item">
+              <span class="measure-symbol"> IQR </span>
+
+              <div>
+                <h3>Interquartile Range</h3>
+                <p>The spread of the middle fifty percent of the data.</p>
+              </div>
+            </div>
+
+            <div class="measure-item">
+              <span class="measure-symbol"> σ² </span>
+
+              <div>
+                <h3>Variance</h3>
+                <p>A measure of how far values vary from the mean.</p>
+              </div>
+            </div>
+
+            <div class="measure-item">
+              <span class="measure-symbol"> σ </span>
+
+              <div>
+                <h3>Standard Deviation</h3>
+                <p>A measure of the typical spread of values.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           TEAM
+      ====================================================== -->
+
+      <section class="team-section">
+        <div class="container">
+          <div class="team-heading">
+            <span class="section-label"> 05 — DEVELOPMENT TEAM </span>
+
+            <h2>The people behind StatExplore.</h2>
+
+            <p>
+              StatExplore was developed collaboratively as an academic group
+              project by students of the Department of Mathematics Education.
+            </p>
+          </div>
+
+          <div class="team-table">
+            <article class="team-member">
+              <span class="team-number"> 01 </span>
+
+              <div class="team-avatar">IC</div>
+
+              <div class="team-details">
+                <h3>Ikechukwu Chidera</h3>
+
+                <span> Group Member </span>
+              </div>
+
+              <div class="team-index">5240110113</div>
+            </article>
+
+            <article class="team-member">
+              <span class="team-number"> 02 </span>
+
+              <div class="team-avatar">AE</div>
+
+              <div class="team-details">
+                <h3>Adambire Ebenezer Ayidaana</h3>
+
+                <span> Group Member </span>
+              </div>
+
+              <div class="team-index">5240110158</div>
+            </article>
+
+            <article class="team-member">
+              <span class="team-number"> 03 </span>
+
+              <div class="team-avatar">FE</div>
+
+              <div class="team-details">
+                <h3>Fosu Emmanuella</h3>
+
+                <span> Group Member </span>
+              </div>
+
+              <div class="team-index">5240110134</div>
+            </article>
+
+            <article class="team-member">
+              <span class="team-number"> 04 </span>
+
+              <div class="team-avatar">SF</div>
+
+              <div class="team-details">
+                <h3>Salim Francis</h3>
+
+                <span> Group Member </span>
+              </div>
+
+              <div class="team-index">5240110044</div>
+            </article>
+
+            <article class="team-member">
+              <span class="team-number"> 05 </span>
+
+              <div class="team-avatar">BK</div>
+
+              <div class="team-details">
+                <h3>Bille Kuupoyiri</h3>
+
+                <span> Group Member </span>
+              </div>
+
+              <div class="team-index">5240110068</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           FINAL PURPOSE
+      ====================================================== -->
+
+      <section class="purpose-section">
+        <div class="container purpose-grid">
+          <div class="purpose-visual">
+            <div class="purpose-stat">
+              <span>R</span>
+              <strong>Range</strong>
+            </div>
+
+            <div class="purpose-stat">
+              <span>IQR</span>
+              <strong>Quartiles</strong>
+            </div>
+
+            <div class="purpose-stat">
+              <span>σ²</span>
+              <strong>Variance</strong>
+            </div>
+
+            <div class="purpose-stat">
+              <span>σ</span>
+              <strong>Std. Dev.</strong>
+            </div>
+          </div>
+
+          <div class="purpose-content">
+            <span class="section-label"> 06 — OUR PURPOSE </span>
+
+            <h2>
+              Turning statistical formulas into something students can explore.
+            </h2>
+
+            <p>
+              Our goal is to create a learning environment where students do
+              more than memorize statistical formulas. StatExplore encourages
+              them to experiment with data, observe patterns, calculate measures
+              and explain what their results mean.
+            </p>
+
+            <a href="interactive.html" class="btn btn-primary">
+              Start Exploring
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
             <h3>StatExplore</h3>
+
             <p>
-              Interactive laboratory for learning Measures of Dispersion through
-              exploration, practice and assessment.
+              An interactive laboratory designed to help students understand
+              Measures of Dispersion through exploration, practice and
+              assessment.
             </p>
           </div>
 
           <div class="footer-links">
-            <h4>Pages</h4>
+            <h4>Explore</h4>
+
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="lesson.html">Lesson</a></li>
-              <li><a href="interactive.html">Interactive</a></li>
-              <li><a href="practice.html">Practice</a></li>
+              <li>
+                <a href="index.html"> Home </a>
+              </li>
+
+              <li>
+                <a href="lesson.html"> Lesson </a>
+              </li>
+
+              <li>
+                <a href="interactive.html"> Interactive </a>
+              </li>
+
+              <li>
+                <a href="practice.html"> Practice </a>
+              </li>
+
+              <li>
+                <a href="assessment.html"> Assessment </a>
+              </li>
             </ul>
           </div>
 
           <div class="footer-course">
-            <h4>Course</h4>
-            <p>
-              Department of Mathematics Education<br />
-              University of Education, Winneba
-            </p>
+            <h4>Academic Project</h4>
+
+            <p>Department of Mathematics Education</p>
+
+            <p>University of Education, Winneba</p>
           </div>
         </div>
 
         <div class="footer-bottom">
           <p>© 2026 StatExplore Group Project</p>
+
           <p>Measures of Dispersion Learning Platform</p>
         </div>
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>
